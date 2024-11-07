@@ -9,7 +9,7 @@
 
 ## 使い方
 #### 準備
-
+- `git clone https://github.com/oda251/ac-onefiler`
 - (非ubuntuユーザ) `ac-onfiler`のコンパイル
   - https://github.com/nlohmann/json をクローン
     - `brew`からインストールも可能です
