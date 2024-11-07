@@ -1,0 +1,9 @@
+{
+	"library": {
+		"directory": "library",
+		"header": "header.hpp",
+		"main": "main.cpp"
+	},
+	"output_file": "code.cpp",
+	"ac-library": ""
+}
