@@ -1,6 +1,6 @@
 ## 機能
 - `include`ディレクティブを識別し、再帰的に展開しながら、単一の`C/C++`スクリプトファイルを生成します
-  - 重複するライブラリは自動的に除外されます
+	- 重複するライブラリは自動的に除外されます
 - 「Atcoderで、自作ライブラリを簡便に使用したい」等の利用場面を想定しています
 
 ## 注釈
@@ -9,17 +9,17 @@
 
 ## 使い方
 #### 準備
-- `git clone https://github.com/oda251/ac-onefiler`
-- (非ubuntuユーザ) `ac-onfiler`のコンパイル
-  - https://github.com/nlohmann/json をクローン
-    - `brew`からインストールも可能です
-      - `brew install nlohmann-json`
-  - `Makefile`の`NLOHMANN_HEADER_PATH`変数を、インストールした`nlohmann/json`が存在するパスに書き換え
-  - 当リポジトリのルートディレクトリにて、`make`コマンドを実行
-- (ubuntuユーザ) `dist`ディレクトリのコンパイル済みファイルを使用できます
+1. `git clone https://github.com/oda251/ac-onefiler`
+2. (**非ubuntuユーザ**) `ac-onfiler`のコンパイル
+	- https://github.com/nlohmann/json をクローン
+		- `brew`からインストールも可能です
+   	- `brew install nlohmann-json`
+	- `Makefile`の`NLOHMANN_HEADER_PATH`変数を、インストールした`nlohmann/json`が存在するパスに書き換え
+	- 当リポジトリのルートディレクトリにて、`make`コマンドを実行
+- (**ubuntuユーザ**) `dist`ディレクトリのコンパイル済みファイルを使用できます
 
-- `ac-onfiler`、`setting.json`、`library`ディレクトリを同じ階層に配置
-- `library`ディレクトリに自作ライブラリを格納
+3. `ac-onfiler`、`setting.json`、`library`ディレクトリを同じ階層に配置
+4. `library`ディレクトリに自作ライブラリを格納
 #### 実行方法
 ```bash
 ./ac-onfiler <ソースファイル...>
@@ -40,4 +40,3 @@
 
 ## 使用言語
 - C++17
-- 
