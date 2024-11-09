@@ -53,28 +53,27 @@ int main() {
 
 
 ## 注釈
-- ubuntu以外のOSは動作確認しておりません。
+- ubuntu以外のOSは動作確認しておりません。また、その場合は、お手数ですがコンパイルからお願いいたします。
 - ご指摘、ISSUE、プルリクエスト等大歓迎です。よろしくお願いします。
 
 ## 使い方
 #### 準備
 1. - 任意のディレクトリに当リポジトリをクローン
 		- `git clone https://github.com/oda251/ac-onefiler`
-2. - (**非linuxユーザ**) `ac-onfiler`のコンパイル
+2. - (**非ubuntuユーザ**) `ac-onfiler`のコンパイル
 		1. `nlohmann/json`ライブラリのインストール
 			- https://github.com/nlohmann/json をクローン
 			- `brew`からインストールも可能です
 				- `brew install nlohmann-json`
 		2. `Makefile`の`NLOHMANN_HEADER_PATH`変数を、インストールした`nlohmann/json`が存在するパスに書き換え
 		3. 当リポジトリのルートディレクトリにて、`make`コマンドを実行
-   - (**linuxユーザ**) `release`からダウンロードするか、当リポジトリをクローン後`dist`ディレクトリからご利用ください。
-     - 恐らくmac含むunux系ユーザもこちらで問題ないと思います。
-3. `library`ディレクトリに任意の自作ライブラリを格納
+   - (**ubuntuユーザ**) `dist`ディレクトリのコンパイル済みファイルを使用できます
+1. `library`ディレクトリに任意の自作ライブラリを格納
 #### 実行方法
 ```bash
 <path_to_ac-compiler> <ソースファイル...>
 ```
-例：
+e.g.
 ```
 $ ./ac-compiler main.cpp
 ```

@@ -1,0 +1,6 @@
+{
+	"library": {
+		"directory": "library"
+	},
+	"output_file": "code.cpp"
+}
