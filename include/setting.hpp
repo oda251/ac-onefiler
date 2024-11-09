@@ -2,16 +2,19 @@
 #include <fstream>
 #include <nlohmann/json.hpp>
 #include <vector>
+
+#include "utils.hpp"
 using json = nlohmann::json;
+
+#define SETTING_FILE "setting.json"
 
 class Setting {
  public:
-  std::string header;
-  std::string main;
+  std::string rootDir;
   std::string libraryDir;
   std::string outputFile;
 
-  Setting(const std::string& path);
+  Setting();
   Setting(const Setting& src);
   ~Setting();
 };

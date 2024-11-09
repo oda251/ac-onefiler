@@ -7,6 +7,7 @@
 #include "library.hpp"
 #include "setting.hpp"
 
+
 class Data {
  public:
   const Setting setting;
@@ -14,7 +15,7 @@ class Data {
   std::vector<std::string> source;
   std::unordered_map<std::string, Library> libraries;
 
-  Data(int argc, char* const* const argv, const std::string setting_file_path);
+  Data(int argc, char* const* const argv);
   ~Data();
 };
 

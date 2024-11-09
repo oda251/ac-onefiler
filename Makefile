@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -Wall -O2 -g -fsanitize=address,undefined
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -Wall -O2
 INCLUDES = -Iinclude
 NAME = ac-onefiler
 SRC_DIR = src
@@ -9,7 +9,8 @@ OBJ_DIR = obj
 NLOHMANN_HEADER_PATH = /home/linuxbrew/.linuxbrew/include
 ############################################################
 UTILS_DIR = utils
-UTILS = get_include_directive.cpp
+UTILS = fetch_exe_path.cpp \
+	find_include_directive.cpp
 UTILS := $(addprefix $(UTILS_DIR)/, $(UTILS))
 SRCS = main.cpp \
 	data.cpp \
@@ -40,4 +41,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+debug: CXXFLAGS += -DDEBUG -g -fsanitize=address,undefined
+debug: all
+
+.PHONY: all clean fclean re debug

@@ -1,8 +1,7 @@
 #include "data.hpp"
 
-Data::Data(int argc, char* const* const argv,
-           const std::string setting_file_path)
-    : setting(setting_file_path) {
+Data::Data(int argc, char* const* const argv)
+    : setting() {
   if (argc == 1) {
     throw std::runtime_error("Usage: " + std::string(argv[0]) +
                              " <file paths to compile...>");
