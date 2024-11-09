@@ -1,2 +1,4 @@
 *.o
-library/*.hpp
+test*
+code.cpp
+ac-onefiler
