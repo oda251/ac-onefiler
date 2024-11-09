@@ -1,4 +1,5 @@
 #include "onefiler.hpp"
+
 #include <iostream>
 void detect_libraries(Data& data, const std::string& path, int priority);
 void process(Data& data);
@@ -28,8 +29,9 @@ void detect_libraries(Data& data, const std::string& path, int priority) {
         Library lib = detect_include_directive(line);
         lib.priority = priority;
         register_library(data, lib);
-        if (lib.type == Library::Type::OWN_LIB) {
-          detect_libraries(data, data.setting.libraryDir + lib.path, priority + 1);
+        if (lib.type == Library::Type::LOCAL) {
+          detect_libraries(data, data.setting.libraryDir + lib.path,
+                           priority + 1);
         }
       }
     }
@@ -44,7 +46,7 @@ void process(Data& data) {
   std::vector<Library> libs;
   for (const auto& [path, lib] : data.libraries) {
     // write #include <...>
-    if (lib.type == Library::Type::STD_LIB)
+    if (lib.type == Library::Type::SYSTEM)
       data.outfile << "#include <" << path << ">\n";
     else
       libs.push_back(lib);

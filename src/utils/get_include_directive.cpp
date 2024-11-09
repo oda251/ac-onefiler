@@ -1,5 +1,6 @@
-#include "utils.hpp"
 #include <iostream>
+
+#include "utils.hpp"
 Library detect_include_directive(const std::string& line) {
   size_t i = 0;
   Library res;
@@ -22,11 +23,11 @@ Library detect_include_directive(const std::string& line) {
   char opposite;
   switch (line[i]) {
     case '<':
-      res.type = Library::Type::STD_LIB;
+      res.type = Library::Type::SYSTEM;
       opposite = '>';
       break;
     case '"':
-      res.type = Library::Type::OWN_LIB;
+      res.type = Library::Type::LOCAL;
       opposite = '"';
       break;
     default:
